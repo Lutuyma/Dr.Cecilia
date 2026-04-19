@@ -6,26 +6,20 @@ import "react-datepicker/dist/react-datepicker.css";
 import { setHours, setMinutes, getDay } from "date-fns";
 import { Calendar, Clock, User, Mail, CheckCircle, FileText, ArrowRight, AlertTriangle, MessageSquare } from "lucide-react";
 
-const VALID_AREAS = [
+const AREAS = [
   "Direito da Família",
   "Direito Comercial",
   "Registos, Notariado e Traduções",
   "Direito Migratório",
   "Direito Administrativo",
   "Direito Fiscal",
-  "Consultoria Jurídica (Geral, Trabalho, Desporto, Segurança Social, etc.)"
-];
-
-const INVALID_AREAS = [
+  "Consultoria Jurídica (Geral, Trabalho, Desporto, Segurança Social, etc.)",
   "Direito Penal"
 ];
-
-const ALL_AREAS = [...VALID_AREAS, ...INVALID_AREAS];
 
 export default function BookingWizard() {
   const [step, setStep] = useState(1);
   const [area, setArea] = useState("");
-  const [blockedMessage, setBlockedMessage] = useState("");
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [excludedTimes, setExcludedTimes] = useState<Date[]>([]);
   const [loading, setLoading] = useState(false);
@@ -75,11 +69,6 @@ export default function BookingWizard() {
   };
 
   const handleAreaSelect = (selectedArea: string) => {
-    if (INVALID_AREAS.includes(selectedArea)) {
-      setBlockedMessage("A Dra. Cecília António não atua na área de Direito Penal. Agradecemos o seu contacto e lamentamos não poder ajudar neste caso específico.");
-      return;
-    }
-    setBlockedMessage("");
     setArea(selectedArea);
     setStep(2);
   };
@@ -171,15 +160,8 @@ export default function BookingWizard() {
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <h3 className="font-playfair text-xl font-bold mb-6 text-center text-[var(--color-primary)]">1. Qual a área do seu problema?</h3>
               
-              {blockedMessage && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-md flex items-start gap-3">
-                  <AlertTriangle className="w-6 h-6 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm font-medium">{blockedMessage}</p>
-                </div>
-              )}
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {ALL_AREAS.map((a) => (
+                {AREAS.map((a) => (
                   <button
                     key={a}
                     onClick={() => handleAreaSelect(a)}

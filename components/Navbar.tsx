@@ -21,7 +21,7 @@ export default function Navbar() {
               <Link href="#sobre" className="hover:text-[var(--color-accent)] transition-colors px-3 py-2 rounded-md text-sm font-medium">Sobre</Link>
               <Link href="#servicos" className="hover:text-[var(--color-accent)] transition-colors px-3 py-2 rounded-md text-sm font-medium">Serviços</Link>
               <Link href="#formacao" className="hover:text-[var(--color-accent)] transition-colors px-3 py-2 rounded-md text-sm font-medium">Formação</Link>
-              <Link href="#contacto" className="hover:text-[var(--color-accent)] transition-colors px-3 py-2 rounded-md text-sm font-medium">Contacto</Link>
+              <Link href="#marcacoes" className="hover:text-[var(--color-accent)] transition-colors px-3 py-2 rounded-md text-sm font-medium">Contacto</Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -42,7 +42,7 @@ export default function Navbar() {
             <Link href="#sobre" className="block hover:text-[var(--color-accent)] hover:bg-black/20 px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsOpen(false)}>Sobre</Link>
             <Link href="#servicos" className="block hover:text-[var(--color-accent)] hover:bg-black/20 px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsOpen(false)}>Serviços</Link>
             <Link href="#formacao" className="block hover:text-[var(--color-accent)] hover:bg-black/20 px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsOpen(false)}>Formação</Link>
-            <Link href="#contacto" className="block hover:text-[var(--color-accent)] hover:bg-black/20 px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsOpen(false)}>Contacto</Link>
+            <Link href="#marcacoes" className="block hover:text-[var(--color-accent)] hover:bg-black/20 px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsOpen(false)}>Contacto</Link>
           </div>
         </div>
       )}
