@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "react-datepicker/dist/react-datepicker.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-primary: #333333; /* Ajustado para estar mais próximo do fundo escuro do cartão */
+  --color-accent:  #D0A85C;  /* Ajustado para coincidir com o dourado do cartão */
+  --color-secondary: #5a5a5a;
+  
+  --font-playfair: var(--font-playfair), "Georgia", serif;
+  --font-inter: var(--font-inter), "Helvetica", "Arial", sans-serif;
+}
+
+@layer utilities {
+  .brand-hero-bg {
+    background: linear-gradient(to bottom right, #333333, #1f1f1f);
+  }
+}
